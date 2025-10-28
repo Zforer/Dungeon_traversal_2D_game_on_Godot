@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="the_mine_prequel"
-run/main_scene="uid://cexbfowtk14y3"
+run/main_scene="uid://yagkf01xkure"
 config/features=PackedStringArray("4.5")
 
 [input]
