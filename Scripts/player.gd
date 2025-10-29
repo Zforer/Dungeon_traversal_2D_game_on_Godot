@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
+
 const MAX_SPEED = 125
 const JUMP_VELOCITY = -450
 const GRAVITY = 1000
+
+
+@onready var _animated_sprite = $AnimatedSprite2D
 
 
 func _physics_process(delta):
@@ -20,3 +24,14 @@ func _physics_process(delta):
 	
 	
 	move_and_slide()
+
+
+func _process(_delta):
+	if Input.is_action_pressed("move_right"):
+		_animated_sprite.play("run_right")
+	elif Input.is_action_pressed("move_left"):
+		_animated_sprite.play("run_left")
+	elif Input.is_action_pressed("move_ap"):
+		_animated_sprite.play("jamp")
+	else:
+		_animated_sprite.play("static")

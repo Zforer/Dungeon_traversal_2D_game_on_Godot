@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2s0wxvdv8ula"
-path="res://.godot/imported/GG_Static4.png-0dc43563119c3388424ccacba6428ec8.ctex"
+uid="uid://bjgk1vx30wo5w"
+path="res://.godot/imported/slime_run3.png-289a095079d0f1e2a9010f7f6be9c22c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tecstures/GG/GG_Static4.png"
-dest_files=["res://.godot/imported/GG_Static4.png-0dc43563119c3388424ccacba6428ec8.ctex"]
+source_file="res://Tecstures/GG/slime_run3.png"
+dest_files=["res://.godot/imported/slime_run3.png-289a095079d0f1e2a9010f7f6be9c22c.ctex"]
 
 [params]
 
