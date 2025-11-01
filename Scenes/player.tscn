@@ -1,0 +1,109 @@
+[gd_scene load_steps=21 format=3 uid="uid://cexbfowtk14y3"]
+
+[ext_resource type="Script" uid="uid://cgd4kucwnjwdx" path="res://Scripts/player.gd" id="1_fkybt"]
+[ext_resource type="Texture2D" uid="uid://6786r6evtp15" path="res://Tecstures/GG/GG_Static1.png" id="1_vgqql"]
+[ext_resource type="Texture2D" uid="uid://d1i73smjjiys7" path="res://Tecstures/GG/slime_jamp2.png" id="2_7dp3o"]
+[ext_resource type="Texture2D" uid="uid://cxgkn02t8u7mu" path="res://Tecstures/GG/GG_Static2.png" id="2_fkybt"]
+[ext_resource type="Texture2D" uid="uid://c1b4qiemxxtty" path="res://Tecstures/GG/slime_jamp3.png" id="3_h4iuc"]
+[ext_resource type="Texture2D" uid="uid://b8inoinqj6if3" path="res://Tecstures/GG/GG_Static3.png" id="3_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://c2s0wxvdv8ula" path="res://Tecstures/GG/GG_Static4.png" id="4_3smsa"]
+[ext_resource type="Texture2D" uid="uid://xgsrxybhlgom" path="res://Tecstures/GG/slime_jamp4.png" id="4_fd4e3"]
+[ext_resource type="Texture2D" uid="uid://cjksjlf7twnwo" path="res://Tecstures/GG/slime_jamp1.png" id="5_qqcod"]
+[ext_resource type="Texture2D" uid="uid://cacvngvr8bcyx" path="res://Tecstures/GG/slime_run_left1.png" id="6_fs7ks"]
+[ext_resource type="Texture2D" uid="uid://c0bikwxim8q5" path="res://Tecstures/GG/slime_run1.png" id="6_igrcy"]
+[ext_resource type="PackedScene" uid="uid://cqdi1jwt1j2hb" path="res://Scenes/camera_2d.tscn" id="6_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://bk0rjk74sjhkg" path="res://Tecstures/GG/slime_run2.png" id="7_fs7ks"]
+[ext_resource type="Texture2D" uid="uid://csmck1gj5oqhl" path="res://Tecstures/GG/slime_run_left2.png" id="7_l6n3p"]
+[ext_resource type="Texture2D" uid="uid://bjgk1vx30wo5w" path="res://Tecstures/GG/slime_run3.png" id="8_l6n3p"]
+[ext_resource type="Texture2D" uid="uid://8aaoqhnf8vp2" path="res://Tecstures/GG/slime_run_left3.png" id="8_olqyp"]
+[ext_resource type="Texture2D" uid="uid://b14jdsef7igjq" path="res://Tecstures/GG/slime_run4.png" id="9_olqyp"]
+[ext_resource type="Texture2D" uid="uid://bhaia205x5asw" path="res://Tecstures/GG/slime_run_left4.png" id="9_wpjfl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8erm5"]
+radius = 6.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1ek2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qqcod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7dp3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h4iuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fd4e3")
+}],
+"loop": true,
+"name": &"jamp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_fs7ks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l6n3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_olqyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wpjfl")
+}],
+"loop": true,
+"name": &"run_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_igrcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fs7ks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l6n3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_olqyp")
+}],
+"loop": true,
+"name": &"run_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vgqql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fkybt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x3wgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3smsa")
+}],
+"loop": true,
+"name": &"static",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_fkybt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_8erm5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_f1ek2")
+animation = &"jamp"
+autoplay = "static"
+
+[node name="Camera2D" parent="." instance=ExtResource("6_x3wgy")]
