@@ -94,7 +94,7 @@ animations = [{
 }]
 
 [sub_resource type="Gradient" id="Gradient_igrcy"]
-offsets = PackedFloat32Array(0, 0.7077922, 1)
+offsets = PackedFloat32Array(0, 0.64935064, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.04545456, 0.04545456, 0.04545456, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fs7ks"]
@@ -120,5 +120,5 @@ autoplay = "static"
 [node name="Camera2D" parent="." instance=ExtResource("6_x3wgy")]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(0.9516638, 1, 0.5770116, 1)
+color = Color(0.99607843, 1, 1, 1)
 texture = SubResource("GradientTexture2D_fs7ks")
