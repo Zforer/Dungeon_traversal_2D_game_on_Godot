@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cexbfowtk14y3"]
+[gd_scene load_steps=23 format=3 uid="uid://cexbfowtk14y3"]
 
 [ext_resource type="Script" uid="uid://cgd4kucwnjwdx" path="res://Scripts/player.gd" id="1_fkybt"]
 [ext_resource type="Texture2D" uid="uid://6786r6evtp15" path="res://Tecstures/GG/GG_Static1.png" id="1_vgqql"]
@@ -93,6 +93,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_igrcy"]
+offsets = PackedFloat32Array(0, 0.7077922, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.04545456, 0.04545456, 0.04545456, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fs7ks"]
+gradient = SubResource("Gradient_igrcy")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_fkybt")
 
@@ -107,3 +118,7 @@ animation = &"jamp"
 autoplay = "static"
 
 [node name="Camera2D" parent="." instance=ExtResource("6_x3wgy")]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.9516638, 1, 0.5770116, 1)
+texture = SubResource("GradientTexture2D_fs7ks")
