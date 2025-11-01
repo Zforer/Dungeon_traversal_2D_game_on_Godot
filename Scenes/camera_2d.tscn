@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqdi1jwt1j2hb"]
 
-[ext_resource type="Script" uid="uid://darpo6hau4qct" path="res://Scenes/camera_2d.gd" id="1_omgnx"]
+[ext_resource type="Script" uid="uid://darpo6hau4qct" path="res://Scripts/camera_2d.gd" id="1_omgnx"]
 
 [node name="Camera2D" type="Camera2D"]
 script = ExtResource("1_omgnx")
