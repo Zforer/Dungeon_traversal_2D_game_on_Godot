@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="the_mine_prequel"
-run/main_scene="uid://yvxlc8lbli4n"
+run/main_scene="uid://c0rtw7xb4ltsb"
 config/features=PackedStringArray("4.5")
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 
 [input]
 

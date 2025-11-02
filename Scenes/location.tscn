@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://yvxlc8lbli4n"]
+[gd_scene load_steps=9 format=4 uid="uid://yvxlc8lbli4n"]
 
 [ext_resource type="PackedScene" uid="uid://by0vq1ouqi3cn" path="res://Scenes/org.tscn" id="1_cbjjd"]
+[ext_resource type="Script" uid="uid://d1yb7i6etn3lc" path="res://Scenes/location.gd" id="1_dnsau"]
 [ext_resource type="Texture2D" uid="uid://cuw5see6xmecg" path="res://Tecstures/Location/tilesit_danje.png" id="3_cbjjd"]
 [ext_resource type="PackedScene" uid="uid://cexbfowtk14y3" path="res://Scenes/player.tscn" id="3_iwk4b"]
 [ext_resource type="Texture2D" uid="uid://dky4slexu8vu3" path="res://Tecstures/Location/pystota.png" id="4_iwk4b"]
@@ -712,6 +713,7 @@ sources/0 = SubResource("TileSetAtlasSource_iwk4b")
 sources/1 = SubResource("TileSetAtlasSource_dnsau")
 
 [node name="location" type="Node2D"]
+script = ExtResource("1_dnsau")
 
 [node name="Org" parent="." instance=ExtResource("1_cbjjd")]
 position = Vector2(875, 176)
