@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cexbfowtk14y3"]
+[gd_scene load_steps=27 format=3 uid="uid://cexbfowtk14y3"]
 
 [ext_resource type="Script" uid="uid://cgd4kucwnjwdx" path="res://Scripts/player.gd" id="1_fkybt"]
 [ext_resource type="Texture2D" uid="uid://6786r6evtp15" path="res://Tecstures/GG/GG_Static1.png" id="1_vgqql"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://b14jdsef7igjq" path="res://Tecstures/GG/slime_run4.png" id="9_olqyp"]
 [ext_resource type="Texture2D" uid="uid://bhaia205x5asw" path="res://Tecstures/GG/slime_run_left4.png" id="9_wpjfl"]
 [ext_resource type="AudioStream" uid="uid://ckmeiy4o8gsua" path="res://Soundtrec/Звук прыжка слизня_02.mp3" id="19_fs7ks"]
+[ext_resource type="Script" uid="uid://dpb5ua1v6tnmr" path="res://Scenes/slime_hitbox.gd" id="20_l6n3p"]
+[ext_resource type="AudioStream" uid="uid://dbnt7p6fm4llf" path="res://Soundtrec/throw-rock-with-destruction-2.mp3" id="20_olqyp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8erm5"]
 radius = 6.0
@@ -105,6 +107,8 @@ height = 128
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fs7ks"]
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_fkybt")
 
@@ -126,4 +130,20 @@ texture = SubResource("GradientTexture2D_fs7ks")
 
 [node name="SFX_JAMP" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("19_fs7ks")
+volume_db = -15.0
 bus = &"SFX"
+
+[node name="SFX_ATAC" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_olqyp")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="SlimeHitbox" type="Area2D" parent="."]
+monitoring = false
+monitorable = false
+script = ExtResource("20_l6n3p")
+
+[node name="CollisionAtac" type="CollisionShape2D" parent="SlimeHitbox"]
+shape = SubResource("CircleShape2D_fs7ks")
+
+[connection signal="area_entered" from="SlimeHitbox" to="SlimeHitbox" method="_on_area_entered"]

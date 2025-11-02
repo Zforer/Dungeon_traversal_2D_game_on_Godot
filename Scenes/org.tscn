@@ -28,7 +28,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Org" type="CharacterBody2D"]
+[node name="Org" type="CharacterBody2D" groups=["enemies"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
