@@ -8,7 +8,7 @@ var factorstep = 0.01
 func _ready():
 	pass
 	
-func _process(delta):
+func _process(_delta):
 	zoom.x = lerp(zoom.x, zoomfactor * zoom.x, zoomspeed * zoom.x)
 	zoom.y = lerp(zoom.y, zoomfactor * zoom.y, zoomspeed * zoom.y)
 	

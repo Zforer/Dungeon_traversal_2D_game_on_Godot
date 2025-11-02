@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=4 uid="uid://yvxlc8lbli4n"]
+[gd_scene load_steps=22 format=4 uid="uid://yvxlc8lbli4n"]
 
 [ext_resource type="PackedScene" uid="uid://by0vq1ouqi3cn" path="res://Scenes/org.tscn" id="1_cbjjd"]
-[ext_resource type="Script" uid="uid://d1yb7i6etn3lc" path="res://Scenes/location.gd" id="1_dnsau"]
+[ext_resource type="Script" uid="uid://d1yb7i6etn3lc" path="res://Scripts/location.gd" id="1_dnsau"]
 [ext_resource type="Texture2D" uid="uid://cuw5see6xmecg" path="res://Tecstures/Location/tilesit_danje.png" id="3_cbjjd"]
 [ext_resource type="PackedScene" uid="uid://cexbfowtk14y3" path="res://Scenes/player.tscn" id="3_iwk4b"]
 [ext_resource type="Texture2D" uid="uid://dky4slexu8vu3" path="res://Tecstures/Location/pystota.png" id="4_iwk4b"]
+[ext_resource type="Script" uid="uid://b7kwlu733ow60" path="res://Scripts/music.gd" id="4_lcd7l"]
+[ext_resource type="Script" uid="uid://bryil30a7ryyb" path="res://Scripts/check_button.gd" id="5_gu4jm"]
+[ext_resource type="AudioStream" uid="uid://drdx3ni8y26kk" path="res://Soundtrec/99_cavern_of_lost_souls.mp3" id="8_gu4jm"]
+[ext_resource type="Script" uid="uid://cuno7lxsvr4jv" path="res://Scenes/sfx.gd" id="8_u0o80"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iwk4b"]
 texture = ExtResource("3_cbjjd")
@@ -712,6 +716,64 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_iwk4b")
 sources/1 = SubResource("TileSetAtlasSource_dnsau")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcd7l"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.20392157)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gu4jm"]
+bg_color = Color(0.6052743, 0.6052743, 0.6052743, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.20392157)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0o80"]
+bg_color = Color(0.61745477, 0.61745477, 0.6174547, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.20392157)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qs7l5"]
+bg_color = Color(0.4390491, 0.43904912, 0.43904912, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.20392157)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_exrxc"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_uu2xw"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_u3g3t"]
+color = Color(0.07356619, 0.5459717, 0.87296146, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_qs7l5"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_exrxc"]
+color = Color(0.07356619, 0.5459717, 0.87296146, 1)
+thickness = 6
+
 [node name="location" type="Node2D"]
 script = ExtResource("1_dnsau")
 
@@ -729,3 +791,149 @@ color = Color(0.8627451, 0.8627451, 0.8627451, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 blend_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="Options" type="Panel" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -415.0
+offset_top = -232.0
+offset_right = 415.0
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_Back" type="Button" parent="CanvasLayer/Options"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 379.0
+offset_right = 681.0
+offset_bottom = 442.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_lcd7l")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_lcd7l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gu4jm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_u0o80")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qs7l5")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_lcd7l")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_lcd7l")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_lcd7l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_exrxc")
+text = "Back"
+
+[node name="Button_Exit" type="Button" parent="CanvasLayer/Options"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 452.0
+offset_right = 681.0
+offset_bottom = 515.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_lcd7l")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_lcd7l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gu4jm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_u0o80")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qs7l5")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_lcd7l")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_lcd7l")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_lcd7l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_exrxc")
+text = "Exit in Menu"
+
+[node name="Label" type="Label" parent="CanvasLayer/Options"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 13.0
+offset_right = 758.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 32
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="HSlider" parent="CanvasLayer/Options"]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 83.0
+offset_right = 760.0
+offset_bottom = 144.0
+theme_override_styles/slider = SubResource("StyleBoxLine_uu2xw")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_u3g3t")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_u3g3t")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("4_lcd7l")
+audio_bus_name = "Music"
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/Options"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 268.0
+offset_right = 759.0
+offset_bottom = 353.0
+theme_override_font_sizes/font_size = 30
+text = "Fullscreen"
+script = ExtResource("5_gu4jm")
+
+[node name="Label2" type="Label" parent="CanvasLayer/Options"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 90.0
+offset_right = 351.0
+offset_bottom = 134.0
+theme_override_font_sizes/font_size = 30
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/Options"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 168.0
+offset_right = 353.0
+offset_bottom = 212.0
+theme_override_font_sizes/font_size = 30
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX" type="HSlider" parent="CanvasLayer/Options"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 175.0
+offset_right = 759.0
+offset_bottom = 236.0
+theme_override_styles/slider = SubResource("StyleBoxLine_qs7l5")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_exrxc")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_exrxc")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("8_u0o80")
+audio_bus_name = "SFX"
+
+[node name="Music_Standart" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_gu4jm")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="CanvasLayer/Options/Button_Back" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/Options/Button_Exit" to="." method="_on_button_exit_pressed"]
+[connection signal="value_changed" from="CanvasLayer/Options/Music" to="CanvasLayer/Options/Music" method="_on_value_changed"]
+[connection signal="toggled" from="CanvasLayer/Options/CheckButton" to="CanvasLayer/Options/CheckButton" method="_on_toggled"]
+[connection signal="value_changed" from="CanvasLayer/Options/SFX" to="CanvasLayer/Options/SFX" method="_on_value_changed"]

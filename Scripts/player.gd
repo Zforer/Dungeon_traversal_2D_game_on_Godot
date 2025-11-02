@@ -7,6 +7,7 @@ const GRAVITY = 1000
 
 
 @onready var _animated_sprite = $AnimatedSprite2D
+@onready var sfx_jamp = $SFX_JAMP
 
 
 func _physics_process(delta):
@@ -20,7 +21,9 @@ func _physics_process(delta):
 
 	# Обработка прыжка
 	if Input.is_action_just_pressed("move_ap") and is_on_floor():
+		sfx_jamp.stop()
 		velocity.y = JUMP_VELOCITY
+		sfx_jamp.play()
 	
 	
 	move_and_slide()

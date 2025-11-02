@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cexbfowtk14y3"]
+[gd_scene load_steps=24 format=3 uid="uid://cexbfowtk14y3"]
 
 [ext_resource type="Script" uid="uid://cgd4kucwnjwdx" path="res://Scripts/player.gd" id="1_fkybt"]
 [ext_resource type="Texture2D" uid="uid://6786r6evtp15" path="res://Tecstures/GG/GG_Static1.png" id="1_vgqql"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://8aaoqhnf8vp2" path="res://Tecstures/GG/slime_run_left3.png" id="8_olqyp"]
 [ext_resource type="Texture2D" uid="uid://b14jdsef7igjq" path="res://Tecstures/GG/slime_run4.png" id="9_olqyp"]
 [ext_resource type="Texture2D" uid="uid://bhaia205x5asw" path="res://Tecstures/GG/slime_run_left4.png" id="9_wpjfl"]
+[ext_resource type="AudioStream" uid="uid://ckmeiy4o8gsua" path="res://Soundtrec/Звук прыжка слизня_02.mp3" id="19_fs7ks"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8erm5"]
 radius = 6.0
@@ -122,3 +123,7 @@ autoplay = "static"
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.99607843, 1, 1, 1)
 texture = SubResource("GradientTexture2D_fs7ks")
+
+[node name="SFX_JAMP" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_fs7ks")
+bus = &"SFX"
