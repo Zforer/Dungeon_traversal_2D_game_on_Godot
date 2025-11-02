@@ -1,14 +1,18 @@
-[gd_scene load_steps=27 format=3 uid="uid://cexbfowtk14y3"]
+[gd_scene load_steps=31 format=3 uid="uid://cexbfowtk14y3"]
 
 [ext_resource type="Script" uid="uid://cgd4kucwnjwdx" path="res://Scripts/player.gd" id="1_fkybt"]
 [ext_resource type="Texture2D" uid="uid://6786r6evtp15" path="res://Tecstures/GG/GG_Static1.png" id="1_vgqql"]
 [ext_resource type="Texture2D" uid="uid://d1i73smjjiys7" path="res://Tecstures/GG/slime_jamp2.png" id="2_7dp3o"]
 [ext_resource type="Texture2D" uid="uid://cxgkn02t8u7mu" path="res://Tecstures/GG/GG_Static2.png" id="2_fkybt"]
+[ext_resource type="Texture2D" uid="uid://b6tpuel6o08ke" path="res://Tecstures/GG/slime_atac1.png" id="2_p1odr"]
+[ext_resource type="Texture2D" uid="uid://crk4155jksjs1" path="res://Tecstures/GG/slime_atac2.png" id="3_0gysh"]
 [ext_resource type="Texture2D" uid="uid://c1b4qiemxxtty" path="res://Tecstures/GG/slime_jamp3.png" id="3_h4iuc"]
 [ext_resource type="Texture2D" uid="uid://b8inoinqj6if3" path="res://Tecstures/GG/GG_Static3.png" id="3_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://c2s0wxvdv8ula" path="res://Tecstures/GG/GG_Static4.png" id="4_3smsa"]
 [ext_resource type="Texture2D" uid="uid://xgsrxybhlgom" path="res://Tecstures/GG/slime_jamp4.png" id="4_fd4e3"]
+[ext_resource type="Texture2D" uid="uid://566qgus8ykex" path="res://Tecstures/GG/slime_atac3.png" id="4_vfarp"]
 [ext_resource type="Texture2D" uid="uid://cjksjlf7twnwo" path="res://Tecstures/GG/slime_jamp1.png" id="5_qqcod"]
+[ext_resource type="Texture2D" uid="uid://borqsgdpfqm1m" path="res://Tecstures/GG/slime_atac4.png" id="5_y6uwr"]
 [ext_resource type="Texture2D" uid="uid://cacvngvr8bcyx" path="res://Tecstures/GG/slime_run_left1.png" id="6_fs7ks"]
 [ext_resource type="Texture2D" uid="uid://c0bikwxim8q5" path="res://Tecstures/GG/slime_run1.png" id="6_igrcy"]
 [ext_resource type="PackedScene" uid="uid://cqdi1jwt1j2hb" path="res://Scenes/camera_2d.tscn" id="6_x3wgy"]
@@ -27,6 +31,26 @@ radius = 6.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f1ek2"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p1odr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0gysh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vfarp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y6uwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p1odr")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 15.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_qqcod")
@@ -119,8 +143,10 @@ shape = SubResource("CircleShape2D_8erm5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_f1ek2")
-animation = &"jamp"
+animation = &"attack"
 autoplay = "static"
+frame = 4
+frame_progress = 1.0
 
 [node name="Camera2D" parent="." instance=ExtResource("6_x3wgy")]
 

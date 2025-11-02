@@ -8,6 +8,7 @@ const SLAM_FALL_SPEED = 800
 
 var is_slamming: bool = false
 var was_in_air: bool = false
+var is_attacking = false
 
 
 @onready var _animated_sprite = $AnimatedSprite2D
@@ -48,19 +49,28 @@ func _physics_process(delta):
 
 
 func execute_slam_attack():
-	#$Sprite2D.play("Atak")
+	if $AnimatedSprite2D.animation != "attack":
+		_animated_sprite.play("attack")
+		is_attacking = true
+	else:
+		$AnimatedSprite2D.seek(0)
+		_animated_sprite.play("attack")
+		is_attacking = true
+		
 	$SFX_ATAC.play()
 	$SlimeHitbox.monitoring = true
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.5).timeout
 	$SlimeHitbox.monitoring = false
+	is_attacking = false
 
 
 func _process(_delta):
-	if Input.is_action_pressed("move_right"):
-		_animated_sprite.play("run_right")
-	elif Input.is_action_pressed("move_left"):
-		_animated_sprite.play("run_left")
-	elif Input.is_action_pressed("move_ap"):
-		_animated_sprite.play("jamp")
-	else:
-		_animated_sprite.play("static")
+	if !is_attacking:
+		if Input.is_action_pressed("move_right"):
+			_animated_sprite.play("run_right")
+		elif Input.is_action_pressed("move_left"):
+			_animated_sprite.play("run_left")
+		elif Input.is_action_pressed("move_ap"):
+			_animated_sprite.play("jamp")
+		else:
+			_animated_sprite.play("static")

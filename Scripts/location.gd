@@ -8,6 +8,7 @@ func _ready():
 	options.visible = false
 	get_tree().paused = false
 
+
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		options.visible = true
@@ -16,8 +17,6 @@ func _input(event):
 
 func _on_button_back_pressed():
 	_ready()
-
-
 
 
 func _on_button_exit_pressed():
