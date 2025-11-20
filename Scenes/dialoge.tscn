@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://duadh06fe7u7k"]
+
+[ext_resource type="Texture2D" uid="uid://b2lhy7burqxsl" path="res://diologs/diolog1/diolog1.png" id="1_tkex8"]
+
+[node name="Dialoge" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 155.0
+offset_bottom = 40.0
+texture = ExtResource("1_tkex8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 719.99994
+offset_bottom = 167.99998
+scale = Vector2(0.2, 0.2)
+text = "- Привет, Слизень?.. Эээ... Ну ладно. Я так понимаю ты на верх хочешь?
+- Бульк...
+- Наверное это да. Тогда тебе прийдеться сражаться с различными монстрами и пройти через несколько опасных биомов. Попробуй одолеть меня и я скажу сможешь ли ты дойти до конца или нет."
